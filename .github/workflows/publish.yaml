@@ -2,7 +2,6 @@ name: CI
 
 on:
   - push
-  - pull_request
 
 jobs:
   test:
@@ -12,7 +11,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: warrenbuckley/Setup-Nuget@v1
       - uses: warrenbuckley/Setup-MSBuild@v1
-      - uses: feinoujc/Setup-VSTest@v1.0.1
+      - uses: Malcolmnixon/Setup-VSTest@v2
 
       - name: Restore
         run: nuget restore MFWSSamplesAndLibraries.sln
