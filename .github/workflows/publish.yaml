@@ -8,8 +8,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@master
-      - uses: warrenbuckley/Setup-Nuget@v1
+      - uses: actions/checkout@v2
+      - uses: nuget/setup-nuget@v1
       - uses: warrenbuckley/Setup-MSBuild@v1
       - uses: Malcolmnixon/Setup-VSTest@v2
 
@@ -28,9 +28,9 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - uses: warrenbuckley/Setup-MSBuild@v1
-      - uses: warrenbuckley/Setup-Nuget@v1
+      - uses: nuget/setup-nuget@v1
 
       - name: Restore
         run: nuget restore MFWSSamplesAndLibraries.sln
